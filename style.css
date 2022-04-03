@@ -1,0 +1,49 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+h1 {
+  text-align: center;
+}
+.wrap {
+  display: flex;
+  justify-content: center;
+  padding-top: 2em;
+}
+
+.container {
+  display: flex;
+
+  width: 350px;
+
+  text-align: center;
+  display: grid;
+  grid-template-columns: repeat(3, 0.5fr);
+  grid-gap: 0.2em;
+  border: grey 1px solid;
+}
+
+.console {
+  padding-top: 1.5em;
+  text-align: center;
+  color: white;
+  grid-column: 1/4;
+  height: 3em;
+  margin-bottom: 1em;
+  background: black;
+}
+.numbers {
+  padding-top: 1em;
+  grid-column: 1/4;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 0.2em;
+}
+.buttons {
+  display: grid;
+  border: black 1px solid;
+}
+
+.total {
+  grid-column: 2/4;
+}
