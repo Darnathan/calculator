@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Quicksand:wght@300;400;500;600;700&display=swap" rel="stylesheet"> 
     <link rel="stylesheet" href="style.css">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,31 +12,32 @@
 </head>
 <body>
     <h1>The Calculator</h1>
-    <div class="wrap">
-    <div class="container">
-        <div class="console">CONSOLE</div>
-
-        <div class="buttons button-operator +">+</div>
-        <div class="buttons button-operator -">-</div>
-        <div class="buttons button-operator *">x</div>
-        <div class="buttons button-operator /">/</div>
-        
-
-        <div class="numbers">
-            <div class="buttons">1</div>
-            <div class="buttons">2</div>
-            <div class="buttons">3</div>
-            <div class="buttons">4</div>
-            <div class="buttons">5</div>
-            <div class="buttons">6</div>
-            <div class="buttons">7</div>
-            <div class="buttons">8</div>
-            <div class="buttons">9</div>
-            <div class="buttons zero">0</div>
-            <div class="buttons button-operator total">=</div>
+    <div class="calculator">
+        <div class="console">
+            <div data-previous-input class="input previous-input"></div>
+            <div data-current-input class=" input current-input"></div>
+        </div>
+        <div class="buttons">
+            <button data-all-clear class=" span-1">AC</button>
+            <button data-delete>DEL</button>
+            <button data-operation>X</button>
+            <button data-number>7</button>
+            <button data-number>8</button>
+            <button data-number>9</button>
+            <button data-operation>÷</button>
+            <button data-number>4</button>
+            <button data-number>5</button>
+            <button data-number>6</button>
+            <button data-operation>+</button>
+            <button data-number>1</button>
+            <button data-number>2</button>
+            <button data-number>3</button>
+            <button data-operation>-</button>
+            <button data-number>0</button>
+            <button data-number>.</button>
+            <button data-equals class="data-equals button span-2">=</button>
         </div>
     </div>
-</div>
 
 
 
