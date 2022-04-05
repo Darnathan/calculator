@@ -15,13 +15,15 @@ class Calculator {
     }
     //deletes the previous added number
     delete(){
-        if(this.previousInput.includes("=")) return
+        //does not delete if currentInput is an answer
+        if (this.currentInput.includes('=')) return
         this.currentInput = this.currentInput.toString().slice(0, -1)
         
     }
     //adds so that there can be multiple numbers, also converts the numbers to string
     appendNumber(number){
         if (number === '.' && this.currentInput.includes('.')) return
+        if (this.currentInput.includes('=')) return
         this.currentInput = this.currentInput.toString() + number.toString();
         
     }
