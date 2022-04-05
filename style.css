@@ -15,6 +15,7 @@ h1 {
 .console {
   margin: 5px;
   width: auto;
+  min-height: 5rem;
   height: auto;
   background-color: #394dcd;
   border-radius: 7px;
