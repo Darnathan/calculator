@@ -57,6 +57,12 @@ h1 {
 .span-2 {
   grid-column: 3/5;
 }
+.delete {
+  color: #ff0000;
+}
+.operations {
+  color: #394dcd;
+}
 .span-1 {
   grid-column: 1/3;
 }

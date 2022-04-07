@@ -43,6 +43,7 @@ class Calculator {
         const prev = parseFloat(this.previousInput)
         const current = parseFloat(this.currentInput)
         if (isNaN(prev) || isNaN(current)) return
+        
         switch (this.operation) {
             case '+':
                 computation = prev + current
@@ -59,9 +60,13 @@ class Calculator {
             default:
                 return
         }
+        //prints out the full calculation
         let output = prev + " " +`${this.operation}`+ " " + current + " =";
-        
-        this.currentInput = computation
+        if(computation === Infinity){
+            this.currentInput = "Sneaky ;)"
+        } else {
+            this.currentInput = computation
+        }
         this.previousInput = output
         this.operation = undefined
     }
@@ -71,6 +76,7 @@ class Calculator {
        this.previousInputText.innerText = this.previousInput
        
     }
+    
 }
 
 
@@ -82,8 +88,85 @@ const deleteButton = document.querySelector('[data-delete]');
 const allClear = document.querySelector('[data-all-clear]');
 const previousInputText = document.querySelector('[data-previous-input]');
 const currentInputText = document.querySelector('[data-current-input]');
-
 const calculator = new Calculator(previousInputText, currentInputText);
+
+document.addEventListener('keydown', (e) => {
+    console.log(e.code)
+    if (e.code === "Numpad1") {
+        calculator.appendNumber(1)
+        calculator.updateDisplay()
+    }
+    if (e.code === "Numpad2") {
+        calculator.appendNumber(2)
+        calculator.updateDisplay()
+    }
+    if (e.code === "Numpad3") {
+        calculator.appendNumber(3)
+        calculator.updateDisplay()
+    }
+    if (e.code === "Numpad4") {
+        calculator.appendNumber(4)
+        calculator.updateDisplay()
+    }
+    if (e.code === "Numpad5") {
+        calculator.appendNumber(5)
+        calculator.updateDisplay()
+    }
+    if (e.code === "Numpad6") {
+        calculator.appendNumber(6)
+        calculator.updateDisplay()
+    }
+    if (e.code === "Numpad7") {
+        calculator.appendNumber(7)
+        calculator.updateDisplay()
+    }
+    if (e.code === "Numpad8") {
+        calculator.appendNumber(8)
+        calculator.updateDisplay()
+    }
+    if (e.code === "Numpad9") {
+        calculator.appendNumber(9)
+        calculator.updateDisplay()
+    }
+    if (e.code === "Numpad0") {
+        calculator.appendNumber(0)
+        calculator.updateDisplay()
+    }
+    if (e.code === "NumpadDecimal" || e.code === "Period") {
+        calculator.appendNumber(".")
+        calculator.updateDisplay()
+    }
+    if (e.code === "NumpadAdd") {
+        calculator.chooseOperation("+");
+        calculator.updateDisplay()
+    }
+    if (e.code === "NumpadSubtract") {
+        calculator.chooseOperation("-");
+        calculator.updateDisplay()
+    }
+    if (e.code === "NumpadMultiply") {
+        calculator.chooseOperation("x");
+        calculator.updateDisplay()
+    }
+    if (e.code === "NumpadDivide") {
+        calculator.chooseOperation("÷");
+        calculator.updateDisplay()
+    }
+    if (e.code === "NumpadEnter" || e.code === "Enter") {
+        calculator.compute()
+        calculator.updateDisplay()
+    }
+    if (e.code === "Backspace") {
+        calculator.delete();
+        calculator.updateDisplay();
+    }
+    if (e.code === "Escape") {
+        calculator.clear();
+        calculator.updateDisplay();
+    }
+    return
+});
+
 
 numberButtons.forEach(button => {
     button.addEventListener('click', () => {
@@ -112,4 +195,4 @@ deleteButton.addEventListener('click', () => {
 equalsButton.addEventListener('click', () => {
     calculator.compute()
     calculator.updateDisplay()
-})
+});
