@@ -42,17 +42,20 @@ h1 {
   color: rgba(223, 227, 0, 1);
 }
 .calculator {
+  display: grid;
   box-shadow: 5px 5px 2px #2a5f55;
   background-color: #6c6c6c;
   border: 2px solid black;
-  width: 15rem;
+  width: 20rem;
   padding: 5px;
   border-radius: 5px;
+  height: auto;
 }
 .buttons {
   display: grid;
   grid-gap: 3px;
   grid-template-columns: repeat(4, auto);
+  height: 12rem;
 }
 .span-2 {
   grid-column: 3/5;
