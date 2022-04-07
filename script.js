@@ -34,8 +34,8 @@ class Calculator {
             this.compute()
         }
         this.operation = operation
-        this.previousInput = this.currentInput
-        this.currentInput = ''
+        this.previousInput = this.currentInput + " " + operation
+        this.currentInput = ""
     }
     //Does the maths
     compute(){
